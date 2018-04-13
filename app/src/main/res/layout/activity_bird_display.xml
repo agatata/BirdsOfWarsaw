@@ -1,0 +1,73 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bird_dspl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:minHeight="@dimen/list_item_height">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/image_dspl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/display_item_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/custom_padding"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/name_text_view_dspl"
+        style="@style/BirdDisplayText"
+        android:textAppearance="?android:textAppearanceLarge"
+        tools:text="kaczka krzyżówka" />
+
+    <TextView
+        android:id="@+id/place_text_view_dspl"
+        style="@style/BirdDisplayText"
+        android:textAppearance="?android:textAppearanceMedium"
+        tools:text="parki, stawy" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/skip_previous"
+            android:layout_width="@dimen/display_icon_height"
+            android:layout_height="@dimen/display_icon_height"
+            android:layout_margin="@dimen/custom_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_skip_previous_black_24dp" />
+
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="@dimen/display_icon_height"
+            android:layout_height="@dimen/display_icon_height"
+            android:layout_margin="@dimen/custom_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_play_circle_filled_black_24dp" />
+
+        <ImageView
+            android:id="@+id/skip_next"
+            android:layout_width="@dimen/display_icon_height"
+            android:layout_height="@dimen/display_icon_height"
+            android:layout_margin="@dimen/custom_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_skip_next_black_24dp" />
+    </LinearLayout>
+        <ImageView
+            android:layout_gravity="bottom"
+            android:id="@+id/back"
+            android:layout_width="@dimen/display_icon_height"
+            android:layout_height="@dimen/display_icon_height"
+            android:layout_margin="@dimen/custom_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,12 @@
+<resources>
+    <!-- Height of list item -->
+    <dimen name="list_item_height">80dp</dimen>
+    <!-- Width of list item -->
+    <dimen name="list_item_width">100dp</dimen>
+    <!-- Custom padding -->
+    <dimen name="custom_padding">16dp</dimen>
+    <!-- Height of display item -->
+    <dimen name="display_item_height">240dp</dimen>
+    <!-- Height of display icon -->
+    <dimen name="display_icon_height">42dp</dimen>
+</resources>
