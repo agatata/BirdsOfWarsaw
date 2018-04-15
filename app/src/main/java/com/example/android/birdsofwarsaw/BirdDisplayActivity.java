@@ -8,21 +8,30 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 import static android.widget.Toast.LENGTH_LONG;
 
 public class BirdDisplayActivity extends AppCompatActivity {
 
-    @BindView(R.id.name_text_view_dspl) TextView name;
-    @BindView(R.id.place_text_view_dspl) TextView place;
-    @BindView(R.id.image_dspl) ImageView image;
-    @BindView(R.id.back) ImageView back;
-    @BindView(R.id.skip_previous) TextView previous;
-    //@BindView(R.id.play) TextView play;
-    //@BindView(R.id.skip_next) ImageView next;
+    @BindView(R.id.name_text_view_dspl)
+    TextView name;
+    @BindView(R.id.place_text_view_dspl)
+    TextView place;
+    @BindView(R.id.image_dspl)
+    ImageView image;
+    @BindView(R.id.back)
+    ImageView back;
+    @BindView(R.id.skip_previous)
+    TextView previous;
+    // @BindView(R.id.play) TextView play;
+    // @BindView(R.id.skip_next) ImageView next;
 
 
     @Override
@@ -47,22 +56,30 @@ public class BirdDisplayActivity extends AppCompatActivity {
         image.setImageResource(birdImage);
 
 
+   previous.setOnClickListener(new View.OnClickListener() {
+       @Override
+       public void onClick(View view) {
+         //  ButterKnife.bind(this, view);
+           Toast.makeText(BirdDisplayActivity.this, "Skip previous", Toast.LENGTH_SHORT).show();
+       }
+   });
+        
+        //
+        //   play.setOnClickListener(new View.OnClickListener() {
+        //       @Override
+        //       public void onClick(View view) {
+        //           Toast.makeText(BirdDisplayActivity.this, "Play!", Toast.LENGTH_SHORT);
+        //       }
+        //   });
+        //
+        //   next.setOnClickListener(new View.OnClickListener() {
+        //       @Override
+        //       public void onClick(View view) {
+        //           Toast.makeText(BirdDisplayActivity.this, "Skip next", Toast.LENGTH_SHORT);
+        //       }
+        //   });
 
-    //   // Set a click listener on that View
-    //   previous.setOnClickListener(new View.OnClickListener(int position) {
-    //       // The code in this method will be executed when the phrases category is clicked on.
-    //       @Override
-    //       public void onClick(View view) {
-    //           com.example.android.birdsofwarsaw.Bird getData = (com.example.android.birdsofwarsaw.Bird) adapter.getItem(position);
-    //           int previousBirdChoce = birdChoice - 1;
-    //
-    //       }
-    //   });
-
-
-        // Set a click listener on that View
         back.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the phrases category is clicked on.
             @Override
             public void onClick(View view) {
                 // Create a new intent to open the {@link MainActivity}
