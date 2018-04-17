@@ -28,17 +28,13 @@ public class BirdDisplayActivity extends AppCompatActivity {
     ImageView image;
     @BindView(R.id.back)
     ImageView back;
-    @BindView(R.id.skip_previous)
-    TextView previous;
-    // @BindView(R.id.play) TextView play;
-    // @BindView(R.id.skip_next) ImageView next;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bird_display);
-        // bind butterknife after setContectView(..)
+        // binding butterknife
         ButterKnife.bind(this);
 
         // get the intent from MainActivity
@@ -56,29 +52,6 @@ public class BirdDisplayActivity extends AppCompatActivity {
         image.setImageResource(birdImage);
 
 
-   previous.setOnClickListener(new View.OnClickListener() {
-       @Override
-       public void onClick(View view) {
-         //  ButterKnife.bind(this, view);
-           Toast.makeText(BirdDisplayActivity.this, "Skip previous", Toast.LENGTH_SHORT).show();
-       }
-   });
-        
-        //
-        //   play.setOnClickListener(new View.OnClickListener() {
-        //       @Override
-        //       public void onClick(View view) {
-        //           Toast.makeText(BirdDisplayActivity.this, "Play!", Toast.LENGTH_SHORT);
-        //       }
-        //   });
-        //
-        //   next.setOnClickListener(new View.OnClickListener() {
-        //       @Override
-        //       public void onClick(View view) {
-        //           Toast.makeText(BirdDisplayActivity.this, "Skip next", Toast.LENGTH_SHORT);
-        //       }
-        //   });
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +61,21 @@ public class BirdDisplayActivity extends AppCompatActivity {
                 startActivity(backIntent);
             }
         });
+    }
+
+    @OnClick({R.id.skip_previous, R.id.play, R.id.skip_next})
+    public void setViewOnClickEvent(View view) {
+        switch (view.getId()) {
+            // Show toast message after clicking "skip_previous" ImageView
+            case R.id.skip_previous:
+                Toast.makeText(BirdDisplayActivity.this, "Skip previous", Toast.LENGTH_SHORT).show();
+                // Show toast message after clicking "play" ImageView
+            case R.id.play:
+                Toast.makeText(BirdDisplayActivity.this, "Play!", Toast.LENGTH_SHORT).show();
+                // Show toast message after clicking "skip_next" ImageView
+            case R.id.skip_next:
+                Toast.makeText(BirdDisplayActivity.this, "Skip next", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

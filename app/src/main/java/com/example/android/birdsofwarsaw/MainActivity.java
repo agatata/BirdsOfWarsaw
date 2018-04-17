@@ -6,11 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
-import com.example.android.birdsofwarsaw.BirdAdapter;
-import com.example.android.birdsofwarsaw.BirdDisplayActivity;
-import com.example.android.birdsofwarsaw.R;
-
 import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,12 +13,11 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.list) ListView listView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // bind butterknife after setContectView(..)
+        // bind ButterKnife
         ButterKnife.bind(this);
 
         // Create a list of birds
@@ -64,6 +58,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(birdSounds);
             }
         });
-
     }
 }
