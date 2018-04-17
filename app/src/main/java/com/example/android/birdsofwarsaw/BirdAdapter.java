@@ -11,8 +11,6 @@ import java.util.ArrayList;
 
 public class BirdAdapter extends ArrayAdapter <Bird> {
 
-    private static final String LOG_TAG = BirdAdapter.class.getSimpleName();
-
     /**
      * This is our own custom constructor (it doesn't mirror a superclass constructor).
      * The context is used to inflate the layout file, and the list is the data we want

@@ -1,22 +1,17 @@
 package com.example.android.birdsofwarsaw;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-import static android.widget.Toast.LENGTH_LONG;
 
 public class BirdDisplayActivity extends AppCompatActivity {
 
@@ -27,14 +22,14 @@ public class BirdDisplayActivity extends AppCompatActivity {
     @BindView(R.id.image_dspl)
     ImageView image;
     @BindView(R.id.back)
-    ImageView back;
+    Button back;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bird_display);
-        // binding butterknife
+        // binding ButterKnife
         ButterKnife.bind(this);
 
         // get the intent from MainActivity
@@ -77,5 +72,4 @@ public class BirdDisplayActivity extends AppCompatActivity {
                 Toast.makeText(BirdDisplayActivity.this, "Skip next", Toast.LENGTH_SHORT).show();
         }
     }
-
 }
